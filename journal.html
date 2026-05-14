@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row g-4 h-100">
+    <div class="col-lg-5">
+        <div class="glass-card p-4 h-100">
+            <h5 class="fw-bold mb-4"><i class="fa-solid fa-pen-nib text-primary-glow me-2"></i>Daily Reflection</h5>
+            
+            <form method="POST" action="">
+                <div class="mb-3">
+                    <label class="form-label text-muted">How are you feeling today?</label>
+                    <div class="d-flex gap-3 fs-4 mood-selector">
+                        <i class="fa-regular fa-face-smile text-success cursor-pointer"></i>
+                        <i class="fa-regular fa-face-meh text-warning cursor-pointer"></i>
+                        <i class="fa-regular fa-face-frown text-danger cursor-pointer"></i>
+                    </div>
+                </div>
+                <div class="form-floating mb-3 glass-input-group">
+                    <input type="text" class="form-control glass-input" id="title" name="title" placeholder="Title">
+                    <label for="title">Title</label>
+                </div>
+                <div class="form-floating mb-4 glass-input-group">
+                    <textarea class="form-control glass-input" id="content" name="content" placeholder="Write your thoughts..." style="height: 150px;"></textarea>
+                    <label for="content">What's on your mind?</label>
+                </div>
+                <button type="submit" class="btn btn-primary glass-btn-primary w-100">Save Entry</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="col-lg-7">
+        <div class="glass-card p-4 h-100">
+            <h5 class="fw-bold mb-4"><i class="fa-regular fa-calendar-days text-primary-glow me-2"></i>Previous Entries</h5>
+            
+            <div class="journal-entries d-flex flex-column gap-3 overflow-auto" style="max-height: 500px;">
+                <!-- Dummy Entry -->
+                <div class="glass-card p-3" style="background: rgba(255, 255, 255, 0.02);">
+                    <div class="d-flex justify-content-between mb-2">
+                        <h6 class="fw-bold mb-0">Great workout session! <i class="fa-regular fa-face-smile text-success ms-2"></i></h6>
+                        <small class="text-muted">Today</small>
+                    </div>
+                    <p class="text-light opacity-75 small mb-0">Felt really energetic during my morning workout. I managed to push my limits.</p>
+                </div>
+                <!-- Dummy Entry -->
+                <div class="glass-card p-3" style="background: rgba(255, 255, 255, 0.02);">
+                    <div class="d-flex justify-content-between mb-2">
+                        <h6 class="fw-bold mb-0">A bit tired <i class="fa-regular fa-face-meh text-warning ms-2"></i></h6>
+                        <small class="text-muted">Yesterday</small>
+                    </div>
+                    <p class="text-light opacity-75 small mb-0">Slept late yesterday and woke up feeling groggy. Need to fix my sleep schedule.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
