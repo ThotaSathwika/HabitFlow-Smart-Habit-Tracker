@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row g-4">
+    <!-- Top Stats -->
+    <div class="col-md-4">
+        <div class="glass-card p-4 h-100 stat-card">
+            <div class="d-flex align-items-center mb-2">
+                <i class="fa-solid fa-list-check text-muted me-2"></i>
+                <h6 class="text-muted mb-0">Total Habits</h6>
+            </div>
+            <h2 class="fw-bold m-0" id="totalHabitsStat">12</h2>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="glass-card p-4 h-100 stat-card">
+            <div class="d-flex align-items-center mb-2">
+                <i class="fa-solid fa-chart-line text-muted me-2"></i>
+                <h6 class="text-muted mb-0">Completed Today</h6>
+            </div>
+            <h2 class="fw-bold m-0 text-success" id="completedTodayStat">7</h2>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="glass-card p-4 h-100 stat-card">
+            <div class="d-flex align-items-center mb-2">
+                <i class="fa-solid fa-fire text-muted me-2"></i>
+                <h6 class="text-muted mb-0">Current Streak</h6>
+            </div>
+            <h2 class="fw-bold m-0 text-primary-glow" id="currentStreakStat">20 days</h2>
+        </div>
+    </div>
+
+    <!-- Charts Row -->
+    <div class="col-md-8">
+        <div class="glass-card p-4 h-100">
+            <h5 class="fw-bold mb-4">Weekly Progress</h5>
+            <div style="height: 300px;">
+                <canvas id="weeklyProgressChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="glass-card p-4 h-100">
+            <h5 class="fw-bold mb-4">Monthly Consistency</h5>
+            <div style="height: 300px;" class="d-flex justify-content-center align-items-center">
+                <canvas id="monthlyConsistencyChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Motivation -->
+    <div class="col-12">
+        <div class="glass-card p-4 ai-motivation">
+            <div class="d-flex align-items-center mb-2">
+                <i class="fa-solid fa-wand-magic-sparkles text-primary-glow me-2"></i>
+                <h6 class="fw-bold mb-0">AI Motivation</h6>
+            </div>
+            <p class="mb-0 text-light opacity-75 fst-italic">"Progress is never perfect. Show up today and protect your streak."</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // These will be initialized in script.js, but we might want to trigger the render here
+    document.addEventListener('DOMContentLoaded', () => {
+        if(typeof initDashboardCharts === 'function') {
+            initDashboardCharts();
+        }
+    });
+</script>
+{% endblock %}
