@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row g-4 h-100">
+    <div class="col-12">
+        <div class="glass-card p-4 mb-4 text-center">
+            <h4 class="fw-bold mb-3"><i class="fa-solid fa-trophy text-warning me-2"></i>Your Progress</h4>
+            <div class="d-flex justify-content-center align-items-center gap-4">
+                <div class="text-center">
+                    <h2 class="text-primary-glow fw-bold mb-0">Level {{ current_user.level }}</h2>
+                    <small class="text-muted">Current Level</small>
+                </div>
+                <div class="flex-grow-1" style="max-width: 400px;">
+                    <div class="progress" style="height: 25px; background-color: rgba(255,255,255,0.1);">
+                        <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                            750 / 1000 XP
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-12">
+        <h5 class="fw-bold mb-3">Badges & Achievements</h5>
+        <div class="row g-3">
+            <!-- Badge 1 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="glass-card p-4 text-center h-100 position-relative">
+                    <i class="fa-solid fa-fire fa-3x text-danger mb-3"></i>
+                    <h6 class="fw-bold">7-Day Streak</h6>
+                    <p class="small text-muted mb-0">Completed all habits for 7 consecutive days.</p>
+                    <span class="badge bg-success position-absolute top-0 end-0 m-3">Unlocked</span>
+                </div>
+            </div>
+            <!-- Badge 2 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="glass-card p-4 text-center h-100 position-relative">
+                    <i class="fa-solid fa-dumbbell fa-3x text-info mb-3"></i>
+                    <h6 class="fw-bold">Fitness Freak</h6>
+                    <p class="small text-muted mb-0">Logged 30 fitness habits.</p>
+                    <span class="badge bg-success position-absolute top-0 end-0 m-3">Unlocked</span>
+                </div>
+            </div>
+            <!-- Badge 3 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="glass-card p-4 text-center h-100 position-relative" style="opacity: 0.6;">
+                    <i class="fa-solid fa-book fa-3x text-secondary mb-3"></i>
+                    <h6 class="fw-bold">Bookworm</h6>
+                    <p class="small text-muted mb-0">Read for 50 hours total.</p>
+                    <div class="progress mt-2" style="height: 5px;">
+                        <div class="progress-bar bg-secondary" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
