@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row g-4 h-100">
+    <div class="col-lg-8">
+        <div class="glass-card p-4 h-100">
+            <h5 class="fw-bold mb-4">Habit Management</h5>
+            
+            <!-- Add Habit Form -->
+            <form method="POST" action="{{ url_for('habits') }}" class="mb-4 d-flex flex-wrap gap-3">
+                <div class="flex-grow-1">
+                    <input type="text" class="form-control glass-input" name="name" placeholder="Habit name" required>
+                </div>
+                <div class="flex-grow-1" style="max-width: 200px;">
+                    <select class="form-select glass-input" name="category" required>
+                        <option value="" selected disabled>Category</option>
+                        <option value="Fitness">Fitness</option>
+                        <option value="Reading">Reading</option>
+                        <option value="Meditation">Meditation</option>
+                        <option value="Coding">Coding</option>
+                        <option value="Water Intake">Water Intake</option>
+                        <option value="Sleep">Sleep</option>
+                        <option value="Journaling">Journaling</option>
+                        <option value="Learning">Learning</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary glass-btn-primary px-4">Add Habit</button>
+            </form>
+
+            <!-- Habits List -->
+            <div class="habits-list d-flex flex-column gap-3">
+                {% for item in habits %}
+                <div class="glass-card p-3 d-flex justify-content-between align-items-center habit-item" data-habit-id="{{ item.habit.id }}">
+                    <div>
+                        <h6 class="fw-bold mb-1">{{ item.habit.name }}</h6>
+                        <small class="text-muted">{{ item.habit.category }}</small>
+                    </div>
+                    <div>
+                        <button class="btn btn-sm px-3 toggle-habit-btn {{ 'btn-success' if item.completed else 'glass-btn' }}">
+                            {{ 'Completed' if item.completed else 'Mark Complete' }}
+                        </button>
+                    </div>
+                </div>
+                {% else %}
+                <div class="text-center py-5 text-muted">
+                    <i class="fa-solid fa-ghost fa-3x mb-3 opacity-50"></i>
+                    <p>No habits yet. Add one above!</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="glass-card p-4 h-100">
+            <h5 class="fw-bold mb-4">Progress Snapshot</h5>
+            <div class="mb-4">
+                <p class="text-muted mb-1">Completed today:</p>
+                <h4 class="fw-bold">
+                    <span id="completedCount">{{ habits|selectattr('completed', 'equalto', True)|list|length }}</span> / {{ habits|length }}
+                </h4>
+            </div>
+            <div class="mb-4">
+                <p class="text-muted mb-1">Goal types: Streak, Quantity, Duration</p>
+                <p class="text-muted small">Supports notes, mood, skip status, and reminders via APIs.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
