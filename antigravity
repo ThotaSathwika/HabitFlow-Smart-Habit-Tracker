@@ -1,0 +1,122 @@
+# Prompt.md — HabitFlow | Smart Habit Tracker
+
+Build a futuristic full-stack habit tracking web application called “HabitFlow” using Flask, SQLite, HTML, CSS, Bootstrap, and Chart.js.
+
+Design Requirements:
+- Glassmorphism dark UI
+- Animated progress rings
+- Neon gradients
+- Smooth transitions
+- Mobile responsive dashboard
+
+Core Features:
+
+1. Authentication
+- Register/Login/Logout
+- Password hashing
+- User sessions
+
+2. Habit Management
+Users can:
+- Add habits
+- Edit habits
+- Delete habits
+- Mark habits completed
+
+Habit categories:
+- Fitness
+- Reading
+- Meditation
+- Coding
+- Water Intake
+- Sleep
+- Journaling
+- Learning
+- Other
+
+3. Daily Streak System
+- Track streak count
+- Longest streak
+- Missed habits analytics
+
+4. Progress Analytics
+Dashboard should display:
+- Daily completion rate
+- Weekly consistency
+- Monthly progress
+- Heatmap-style tracking
+- Habit-wise analytics
+
+5. Smart Reminders
+- Reminder settings
+- Notification preferences
+- Daily motivational quotes
+
+6. Gamification
+- XP points system
+- Achievement badges
+- Level progress
+- Consistency rewards
+
+7. Charts
+Use Chart.js:
+- Weekly consistency graph
+- Habit completion chart
+- Productivity analytics
+
+8. Journal Section
+- Daily reflections
+- Mood tracking
+- Notes
+
+9. Export Features
+- CSV export
+- Download reports
+
+10. Settings
+- Dark/light themes
+- Profile settings
+- Reset data
+
+Tech Stack:
+Backend:
+- Flask
+- Flask-SQLAlchemy
+- Flask-Login
+- Flask-Bcrypt
+
+Frontend:
+- Bootstrap 5
+- HTML5
+- CSS3
+- JavaScript
+- Chart.js
+
+Database:
+- SQLite
+
+Pages Required:
+- Login
+- Register
+- Dashboard
+- Habits
+- Analytics
+- Journal
+- Achievements
+- Settings
+
+Extra UI Requirements:
+- Premium futuristic dashboard
+- Sidebar navigation
+- Animated cards
+- Responsive design
+- Toast notifications
+
+Generate:
+- app.py
+- requirements.txt
+- All templates
+- CSS/JS files
+- SQLite integration
+- Fully functional routes
+- Professional UI
